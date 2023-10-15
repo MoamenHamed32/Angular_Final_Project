@@ -1,0 +1,16 @@
+.header{
+    background-color:  #FFE353;
+    
+}
+.bxs-heart{
+    font-size: 32px;
+}
+.button_Primary {
+    background-color:  #FFE353;
+    color: black;
+    border: none;
+    padding: 0px 48px;
+}
+.input-group{
+    height: 46px;
+}
