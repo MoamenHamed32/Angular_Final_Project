@@ -1,1 +1,36 @@
-<p>movie-card-details works!</p>
+<div class="card d-flex flex-row align-items-center">
+  <figure class="card-img"><img [src]="movie.img" alt="" /></figure>
+  <div class="card-info d-flex flex-column justify-content-between">
+    <div class="top-section d-flex flex-column">
+      <div class="card-title d-flex align-items-center justify-content-between">
+        <h2 class="movie-title">{{ movie.original_title }}</h2>
+        <a href="" class="marked"
+          ><img src="../../assets/WatchList Images/heartIcon.svg" alt=""
+        /></a>
+      </div>
+      <span class="release-date">{{ movie.release_date }}</span>
+      <div class="rate d-flex align-items-center gap-3">
+        <div class="rate-stars">
+          <img
+            class="filled-stars"
+            src="../../assets/WatchList Images/starIcon-filled.svg"
+            [title]="movie.vote_average"
+            alt=""
+            *ngFor="let star of filledStars"
+          />
+          <img
+            class="empty-stars"
+            src="../../assets/WatchList Images/starIcon-empty.svg"
+            [title]="movie.vote_average"
+            alt=""
+            *ngFor="let star of emptyStars"
+          />
+        </div>
+        <span class="rate-count">{{ movie.vote_count }}</span>
+      </div>
+    </div>
+    <p class="movie-desc">
+      {{ movie.overview }}
+    </p>
+  </div>
+</div>

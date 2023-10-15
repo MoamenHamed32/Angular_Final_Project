@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { MoviesWatchListComponent } from './movies-watch-list/movies-watch-list.component';
 import { MovieCardDetailsComponent } from './movie-card-details/movie-card-details.component';
 import { RecommendationComponent } from './recommendation/recommendation.component';
+import { MovieDetialsComponent } from './movie-detials/movie-detials.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RecommendationComponent } from './recommendation/recommendation.compone
     MoviesWatchListComponent,
     MovieCardDetailsComponent,
     RecommendationComponent,
+    MovieDetialsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

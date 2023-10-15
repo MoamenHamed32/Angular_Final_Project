@@ -1,1 +1,30 @@
-<p>movies-watch-list works!</p>
+<section id="watch-list">
+  <div class="container h-100">
+    <h3 class="watch-list-title">Watch list</h3>
+    <div
+      *ngIf="watchListMovies.length > 0; then thenBlock; else elseBlock"
+    ></div>
+    <ng-template #thenBlock>
+      <div class="cards row">
+        <div *ngFor="let movie of watchListMovies" class="col-lg-6 col-md-10">
+          <app-movie-card-details [movie]="movie"></app-movie-card-details>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #elseBlock>
+      <div
+        class="empty-watch-list d-flex flex-column align-items-center justify-content-center"
+      >
+        <figure class="empty-img">
+          <img src="../../assets/WatchList Images/WatchList-Empty.png" alt="" />
+        </figure>
+        <div class="div-info d-flex flex-column align-items-center">
+          <h5 class="empty-title">No Movies in watch list</h5>
+          <button class="go-home-btn btn btn-warning w-100">
+            Back to home
+          </button>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</section>
