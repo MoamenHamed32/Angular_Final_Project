@@ -1,0 +1,33 @@
+.header {
+  background-color: #ffe353;
+}
+.bxs-heart {
+  font-size: 32px;
+}
+.button_Primary {
+  background-color: #ffe353;
+  color: black;
+  border: none;
+  padding: 0px 48px;
+}
+.input-group {
+  height: 46px;
+}
+.anchor {
+  text-decoration: none;
+}
+
+.movie_App {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18px;
+  color: black;
+}
+
+.watch {
+  font-size: 15px;
+  color: black;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+}

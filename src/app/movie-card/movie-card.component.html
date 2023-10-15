@@ -1,1 +1,35 @@
-<p>movie-card works!</p>
+<div class="row col-2">
+  <div class="card border-0 mx-3 my-2">
+    <div class="position-relative">
+      <img
+        src="../../assets/movieCardimgs/movie.jpg"
+        class="card-img-top mb-3 rounded"
+        alt="..."
+      />
+
+      <div
+        class="row d-flex justify-content-center mt-100 position-absolute rating"
+      >
+        <div class="col-md-6">
+          <div class="progress blue">
+            <span class="progress-left">
+              <span class="progress-bar"></span>
+            </span>
+            <span class="progress-right">
+              <span class="progress-bar"></span>
+            </span>
+            <div class="progress-value">90%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <h4 class="mb-0">{{ movie.title }}</h4>
+      <div class="d-flex justify-content-between align-items-center">
+        <p class="card-text mb-0">{{ movie.release_date }}</p>
+        <button class="btn p-0"><i class="bx bx-heart"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

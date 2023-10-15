@@ -1,1 +1,41 @@
-<p>header works!</p>
+<nav class="header p-3 d-flex  align-items-center ">
+    <div class="container d-flex justify-content-between  align-items-center">
+        <div>
+            <h3><a class="movie_App anchor" routerLink="" >Movie App</a></h3>
+        </div>
+
+        <div class=" d-flex  align-items-center">
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle bg-transparent text-black border-0" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    EN
+                </button>
+                <ul class="dropdown-menu">
+                    <li><button class="dropdown-item" type="button">AR</button></li>
+                    <li><button class="dropdown-item" type="button">FR</button></li>
+                    <li><button class="dropdown-item" type="button">IT</button></li>
+                </ul>
+            </div>
+            <div class=" d-flex align-items-center">
+                <i class='bx bxs-heart  '></i>
+                <h5 class="ms-2"><a class="anchor watch" routerLink="movies-watch-list" >watchlist</a> </h5>
+            </div>
+
+        </div>
+    </div>
+
+
+</nav>
+
+<section class="mt-3">
+    <div class="container p-4 bg-secondary-subtle rounded">
+        <h3>Welcome to our movie app</h3>
+        <p>Millions of movies, TV shows and people to discover. Explore now.</p>
+        <div class="input-group mb-3 ">
+            <input type="text" class="form-control me-3 rounded" placeholder="Search and explore...."
+                aria-label="Search" aria-describedby="button-addon2">
+            <button class=" button_Primary btn  btn-outline-secondary rounded" type="button" id="button-addon2">Search</button>
+        </div>
+    </div>
+</section>
