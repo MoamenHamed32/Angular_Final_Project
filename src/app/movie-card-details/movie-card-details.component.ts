@@ -26,5 +26,6 @@ export class MovieCardDetailsComponent {
   removeMovie(movie: AllMoviesApiObject) {
     this.removeFromWatchList.removeFromCart(movie);
     this.removeClick.emit();
+    this.removeFromWatchList.setCounter();
   }
 }

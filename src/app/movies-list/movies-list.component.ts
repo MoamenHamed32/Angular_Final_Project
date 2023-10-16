@@ -17,7 +17,6 @@ export class MoviesListComponent {
   ngOnInit() {
     this.moviesRequestService.getMovieList().subscribe((movies) => {
       this.movieList = movies.results.slice(0, 12);
-      console.log(this.movieList);
     });
   }
 }
