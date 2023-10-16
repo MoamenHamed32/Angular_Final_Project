@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MoviesRequestService } from '../services/movies-request.service';
-import { SingleMovieObject } from '../interface/single-movie-object';
+import { AllMoviesApiObject } from '../interface/all-movies-api-object';
 
 @Component({
   selector: 'app-movies-list',
@@ -8,12 +8,13 @@ import { SingleMovieObject } from '../interface/single-movie-object';
   styleUrls: ['./movies-list.component.css'],
 })
 export class MoviesListComponent {
-  movieList!: Array<SingleMovieObject>;
+  movieList!: Array<AllMoviesApiObject>;
+  movieToSetHisFavorite!: AllMoviesApiObject;
+  currentMovie!: AllMoviesApiObject;
   constructor(private moviesRequestService: MoviesRequestService) {}
   ngOnInit() {
-    this.moviesRequestService.getMovieList().subscribe((x) => {
-      this.movieList = x.results;
-      console.log(this.movieList);
+    this.moviesRequestService.getMovieList().subscribe((movies) => {
+      this.movieList = movies.results;
     });
   }
 }
