@@ -8,8 +8,6 @@ import { AllMoviesApiObject } from '../interface/all-movies-api-object';
   styleUrls: ['./movies-list.component.css'],
 })
 export class MoviesListComponent {
-
-
   movieList!: Array<AllMoviesApiObject>;
   movieToSetHisFavorite!: AllMoviesApiObject;
   currentMovie!: AllMoviesApiObject;
@@ -22,6 +20,8 @@ export class MoviesListComponent {
   }
 
   getRange(count: number): number[] {
-    return Array(count).fill(0).map((x, i) => i);
+    return Array(count)
+      .fill(0)
+      .map((x, i) => i);
   }
-
+}
