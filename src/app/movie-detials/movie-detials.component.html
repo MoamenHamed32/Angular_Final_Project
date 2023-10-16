@@ -1,0 +1,91 @@
+<div class="card my-5 border-0" *ngIf="movie">
+  <div class="container d-flex flex-row align-items-start gap-4">
+    <figure class="card-img">
+      <img
+        [src]="['https://image.tmdb.org/t/p/w400' + movie.poster_path]"
+        alt=""
+      />
+    </figure>
+    <div class="card-info d-flex flex-column justify-content-between">
+      <div class="top-section d-flex flex-column">
+        <div
+          class="card-title d-flex align-items-center justify-content-between"
+        >
+          <h2 class="movie-title">{{ movie.original_title }}</h2>
+          <a class="marked" (click)="watchListData(movie)">
+            <div *ngIf="movie.isFavorite; then thenBlock; else elseBlock"></div>
+            <ng-template #thenBlock
+              ><img src="../../assets/MovieList/heart-filled.svg" alt=""
+            /></ng-template>
+            <ng-template #elseBlock
+              ><img
+                src="../../assets/MovieList/heart-empty.svg"
+                alt="" /></ng-template
+          ></a>
+        </div>
+        <span class="release-date">{{ movie.release_date }}</span>
+        <div class="rate d-flex align-items-center gap-3">
+          <div class="rate-stars">
+            <img
+              class="filled-stars"
+              src="../../assets/WatchList Images/starIcon-filled.svg"
+              [title]="movie.vote_average"
+              alt=""
+              *ngFor="let star of filledStars"
+            />
+            <img
+              class="empty-stars"
+              src="../../assets/WatchList Images/starIcon-empty.svg"
+              [title]="movie.vote_average"
+              alt=""
+              *ngFor="let star of emptyStars"
+            />
+          </div>
+          <span class="rate-count">{{ movie.vote_count }}</span>
+        </div>
+      </div>
+      <p class="movie-desc">
+        {{ movie.overview }}
+      </p>
+      <ul class="d-flex gap-4 my-4 p-0">
+        <li
+          *ngFor="let genre of movie.genres"
+          class="genres d-flex justify-content-center align-items-center"
+        >
+          {{ genre.name }}
+        </li>
+      </ul>
+      <ul class="movie-data my-3 p-0">
+        <li class="duration">
+          Duration:
+          <span>{{ movie.runtime }} Min.</span>
+        </li>
+        <li class="languages d-flex gap-3">
+          Languages:
+
+          <span
+            *ngFor="let language of movie.spoken_languages"
+            class="language"
+            >{{ language.english_name }}</span
+          >
+        </li>
+      </ul>
+      <ul class="companies p-0">
+        <li *ngFor="let comp of movie.production_companies">
+          <img
+            *ngIf="comp.logo_path != null"
+            [src]="['https://image.tmdb.org/t/p/w200' + comp.logo_path]"
+            alt=""
+          />
+        </li>
+      </ul>
+      <a [href]="movie.homepage" class="website text-decoration-none text-dark"
+        >Website <img src="../../assets/link.svg" alt=""
+      /></a>
+    </div>
+  </div>
+</div>
+<hr />
+<div class="conteiner">
+  <app-recommendation></app-recommendation>
+</div>

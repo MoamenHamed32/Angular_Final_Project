@@ -1,0 +1,38 @@
+<nav class="header p-3 d-flex align-items-center">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div>
+      <h3><a class="movie_App anchor" routerLink="">Movie App</a></h3>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle bg-transparent text-black border-0"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          EN
+        </button>
+        <ul class="dropdown-menu">
+          <li><button class="dropdown-item" type="button">AR</button></li>
+          <li><button class="dropdown-item" type="button">FR</button></li>
+          <li><button class="dropdown-item" type="button">IT</button></li>
+        </ul>
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="bx bxs-heart"></i>
+        <h5 class="ms-2">
+          <a class="anchor watch" routerLink="movies-watch-list"
+            >watchlist
+            <span *ngIf="watchListCounter > 0" class="counter">{{
+              watchListCounter
+            }}</span></a
+          >
+        </h5>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
