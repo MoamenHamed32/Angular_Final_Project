@@ -14,4 +14,5 @@ export interface AllMoviesApiObject {
   vote_average: number;
   vote_count: number;
   isFavorite?: boolean;
+  img?: string;
 }

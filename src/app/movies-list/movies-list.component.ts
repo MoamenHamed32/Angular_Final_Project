@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MoviesRequestService } from '../services/movies-request.service';
 import { AllMoviesApiObject } from '../interface/all-movies-api-object';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-movies-list',
@@ -15,13 +16,8 @@ export class MoviesListComponent {
   constructor(private moviesRequestService: MoviesRequestService) {}
   ngOnInit() {
     this.moviesRequestService.getMovieList().subscribe((movies) => {
-      this.movieList = movies.results;
+      this.movieList = movies.results.slice(0, 12);
+      console.log(this.movieList);
     });
-  }
-
-  getRange(count: number): number[] {
-    return Array(count)
-      .fill(0)
-      .map((x, i) => i);
   }
 }

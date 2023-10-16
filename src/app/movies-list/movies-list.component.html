@@ -1,56 +1,12 @@
-
 <app-search-section></app-search-section>
 
-<div class="container">
+<div class="container my-5">
+  <h2 class="mb-4">Popular Movies</h2>
+  <div class="row">
     <div class="row">
-      <ng-container *ngFor="let rowIndex of getRange(2)">
-       
-          <div class="row">
-            <ng-container *ngFor="let colIndex of getRange(6)">
-              <div class="col-lg-2 col-md-4 col-sm-6">
-                <div class="card border-0 mx-3 my-2">
-                    <div class="position-relative">
-   
-
-                        <img src="../../assets/movieCardimgs/movie.jpg" class="card-img-top mb-3 rounded " alt="...">
-                    
-                        <div class="row d-flex justify-content-center mt-100 position-absolute rating">
-                    
-                            <div class="col-md-6 ">
-                    
-                                <div class="progress blue ">
-                                    <span class="progress-left">
-                                        <span class="progress-bar"></span>
-                                    </span>
-                                    <span class="progress-right">
-                                        <span class="progress-bar"></span>
-                                    </span>
-                                    <div class="progress-value">90%</div>
-                                </div>
-                    
-                            </div>
-                    
-                        </div>
-                    
-                    </div>
-                  <div class="card-body">
-                    <h4 class="mb-0">Title</h4>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <p class="card-text mb-0">Date</p>
-                      <button class="btn p-0"><i class='bx bx-heart heart-active'></i></button>
-                     
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ng-container>
-          </div>
-      </ng-container>
+      <div *ngFor="let movie of movieList" class="col-lg-2 col-md-4 col-sm-6">
+        <app-movie-card [movie]="movie"></app-movie-card>
+      </div>
     </div>
   </div>
-
-<app-movie-card
-  *ngFor="let movie of movieList"
-  [movie]="movie"
-></app-movie-card>
-
+</div>

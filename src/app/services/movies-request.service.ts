@@ -34,7 +34,6 @@ export class MoviesRequestService {
   setMovieToCart(movie: AllMoviesApiObject): void {
     if (this.movieToCart.indexOf(movie) == -1) {
       this.movieToCart.push(movie);
-      console.log(this.movieToCart);
     }
   }
   getMovieToCart(): Array<AllMoviesApiObject> {
@@ -43,7 +42,6 @@ export class MoviesRequestService {
 
   removeFromCart(movie: AllMoviesApiObject): void {
     this.movieToCart.splice(this.movieToCart.indexOf(movie), 1);
-    console.log(this.movieToCart);
   }
 
   // Header WatchList Counter
