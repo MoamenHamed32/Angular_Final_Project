@@ -5,4 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './movies-list.component.html',
   styleUrls: ['./movies-list.component.css'],
 })
-export class MoviesListComponent {}
+export class MoviesListComponent {
+  getRange(count: number): number[] {
+    return Array(count).fill(0).map((x, i) => i);
+  }
+
+}

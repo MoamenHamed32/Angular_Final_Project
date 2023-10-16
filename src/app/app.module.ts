@@ -10,6 +10,7 @@ import { MoviesWatchListComponent } from './movies-watch-list/movies-watch-list.
 import { MovieCardDetailsComponent } from './movie-card-details/movie-card-details.component';
 import { RecommendationComponent } from './recommendation/recommendation.component';
 import { MovieDetialsComponent } from './movie-detials/movie-detials.component';
+import { SearchSectionComponent } from './search-section/search-section.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MovieDetialsComponent } from './movie-detials/movie-detials.component';
     MovieCardDetailsComponent,
     RecommendationComponent,
     MovieDetialsComponent,
+    SearchSectionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
