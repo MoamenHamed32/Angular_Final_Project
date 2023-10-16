@@ -1,0 +1,108 @@
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card {
+  padding: 1.43rem 0.93rem;
+  gap: 1.56rem;
+  border-radius: 1.18rem;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  margin-bottom: 1.68rem;
+}
+.card-img {
+  border-radius: 1.68rem;
+  overflow: hidden;
+  width: 35%;
+}
+.card-img img {
+  width: 100%;
+  object-fit: contain;
+}
+.card-info {
+  width: 65%;
+  height: 17rem;
+}
+.top-section {
+  gap: 10px;
+}
+.card-title {
+  margin: 0;
+}
+.card-title .movie-title {
+  max-height: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 80%;
+  margin: 0;
+  padding-left: 5px;
+}
+.release-date {
+  padding-left: 5px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 0.9rem;
+  color: #858585;
+}
+.rate {
+  margin: 2rem 0;
+}
+.rate-stars .empty-stars {
+  padding-right: 7px;
+  height: 23px;
+}
+.rate-count {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+}
+.movie-desc {
+  /* display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden; */
+  padding-left: 5px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2rem;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+}
+.genres {
+  width: 112px;
+  height: 37px;
+  padding: 9px 0;
+  background-color: #ffe353;
+  border-radius: 25px;
+  font-size: 1rem;
+  line-height: 19.3px;
+}
+
+.movie-data li {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 19.3px;
+}
+.movie-data span {
+  font-weight: 400;
+  margin-left: 15px;
+}
+
+.companies img {
+  width: 120px;
+}
+
+.website {
+  width: 112px;
+  height: 37px;
+  padding: 7px 0;
+  border: 1px solid #ffe353;
+  border-radius: 25px;
+  font-size: 1rem;
+  line-height: 19.3px;
+  text-align: center;
+}

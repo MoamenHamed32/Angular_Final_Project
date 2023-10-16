@@ -8,8 +8,7 @@ import { RecommendationComponent } from './recommendation/recommendation.compone
 const routes: Routes = [
   { path: '', component: MoviesListComponent },
   { path: 'movies-watch-list', component: MoviesWatchListComponent },
-  { path: 'movie-details', component: MovieDetialsComponent },
-  { path: 'recommendation', component: RecommendationComponent },
+  { path: 'movie-details/:id', component: MovieDetialsComponent },
 ];
 
 @NgModule({

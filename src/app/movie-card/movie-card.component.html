@@ -1,8 +1,9 @@
 <div class="row">
   <div class="card border-0 mx-3 my-2">
     <div class="position-relative">
-      <img [src]="movie.img" class="card-img-top mb-3 rounded" alt="..." />
-
+      <a (click)="navigateToMovieDetails(movie.id)">
+        <img [src]="movie.img" class="card-img-top mb-3 rounded" alt="..." />
+      </a>
       <div
         class="row d-flex justify-content-center mt-100 position-absolute rating"
       >
@@ -21,7 +22,12 @@
     </div>
 
     <div class="card-body">
-      <h4 class="card-title mb-0">{{ movie.title }}</h4>
+      <a
+        class="text-decoration-none text-dark"
+        (click)="navigateToMovieDetails(movie.id)"
+      >
+        <h4 class="card-title mb-0">{{ movie.title }}</h4>
+      </a>
       <div class="d-flex justify-content-between align-items-center">
         <p class="card-text mb-0">{{ movie.release_date }}</p>
         <button (click)="addToCart(movie)" class="btn p-0">
