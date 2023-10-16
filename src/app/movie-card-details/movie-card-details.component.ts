@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { MoviesRequestService } from '../services/movies-request.service';
+import { AllMoviesApiObject } from '../interface/all-movies-api-object';
 
 @Component({
   selector: 'app-movie-card-details',
@@ -7,9 +9,11 @@ import { Component, Input } from '@angular/core';
 })
 export class MovieCardDetailsComponent {
   @Input() movie: any;
+  @Output() removeClick = new EventEmitter<any>();
   movieRate!: number;
   filledStars: Array<number> = [];
   emptyStars: Array<number> = [1, 1, 1, 1, 1];
+  constructor(private removeFromWatchList: MoviesRequestService) {}
   ngOnInit() {
     this.movie.img = `https://image.tmdb.org/t/p/w200${this.movie.poster_path}`;
     this.movieRate = (Math.round(this.movie.vote_average) / 10) * 100;
@@ -18,5 +22,9 @@ export class MovieCardDetailsComponent {
     }
 
     this.emptyStars.length = 5 - this.filledStars.length;
+  }
+  removeMovie(movie: AllMoviesApiObject) {
+    this.removeFromWatchList.removeFromCart(movie);
+    this.removeClick.emit();
   }
 }

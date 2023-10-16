@@ -4,9 +4,16 @@
     <div class="top-section d-flex flex-column">
       <div class="card-title d-flex align-items-center justify-content-between">
         <h2 class="movie-title">{{ movie.original_title }}</h2>
-        <a href="" class="marked"
-          ><img src="../../assets/WatchList Images/heartIcon.svg" alt=""
-        /></a>
+        <a class="marked" (click)="removeMovie(movie)">
+          <div *ngIf="movie.isFavorite; then thenBlock; else elseBlock"></div>
+          <ng-template #thenBlock
+            ><img src="../../assets/MovieList/heart-filled.svg" alt=""
+          /></ng-template>
+          <ng-template #elseBlock
+            ><img
+              src="../../assets/MovieList/heart-empty.svg"
+              alt="" /></ng-template
+        ></a>
       </div>
       <span class="release-date">{{ movie.release_date }}</span>
       <div class="rate d-flex align-items-center gap-3">

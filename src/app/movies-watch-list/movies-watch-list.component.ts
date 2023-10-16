@@ -14,4 +14,8 @@ export class MoviesWatchListComponent {
   ngOnInit() {
     this.watchListMovies = [...this.getMovies.getMovieToCart()];
   }
+  handleRemoveClick(e: any) {
+    this.getMovies.getMovieToCart();
+    this.watchListMovies = [...this.getMovies.getMovieToCart()];
+  }
 }

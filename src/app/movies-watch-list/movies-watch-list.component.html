@@ -7,7 +7,10 @@
     <ng-template #thenBlock>
       <div class="cards row">
         <div *ngFor="let movie of watchListMovies" class="col-lg-6 col-md-10">
-          <app-movie-card-details [movie]="movie"></app-movie-card-details>
+          <app-movie-card-details
+            [movie]="movie"
+            (removeClick)="handleRemoveClick($event)"
+          ></app-movie-card-details>
         </div>
       </div>
     </ng-template>
