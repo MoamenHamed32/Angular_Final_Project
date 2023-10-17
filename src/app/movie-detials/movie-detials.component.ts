@@ -35,7 +35,7 @@ export class MovieDetialsComponent {
       if (this.movie.poster_path == null) {
         this.movie.img = '../../assets/noImage.png';
       } else {
-        this.movie.img = `https://image.tmdb.org/t/p/w200${this.movie.poster_path}`;
+        this.movie.img = `https://image.tmdb.org/t/p/w500${this.movie.poster_path}`;
       }
       this.movieRate = (Math.round(movie.vote_average) / 10) * 100;
 
