@@ -6,7 +6,10 @@
         *ngFor="let movie of recommendedMovies"
         class="col-lg-2 col-md-4 col-sm-6"
       >
-        <app-movie-card [movie]="movie"></app-movie-card>
+        <app-movie-card
+          [movie]="movie"
+          (clickEmitter)="clickEmitter($event)"
+        ></app-movie-card>
       </div>
     </div>
   </div>

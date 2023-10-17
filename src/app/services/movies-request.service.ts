@@ -15,9 +15,9 @@ export class MoviesRequestService {
   constructor(private http: HttpClient) {}
 
   // API's Getters
-  getMovieList(): Observable<any> {
+  getMovieList(page: number): Observable<any> {
     return this.http.get(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${this.APIKey}`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${this.APIKey}&page=${page}`
     );
   }
   getMovieDetails(id: number): Observable<any> {

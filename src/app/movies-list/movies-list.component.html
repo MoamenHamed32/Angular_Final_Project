@@ -9,4 +9,26 @@
       </div>
     </div>
   </div>
+  <nav aria-label="Page navigation example ">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" (click)="previousPage()"
+          ><img src="../../assets/MovieList/leftArrow.svg" alt=""
+        /></a>
+      </li>
+      <li *ngFor="let htmlPage of pages" class="page-item">
+        <a class="page-link" (click)="pagination($event)">{{ htmlPage }}</a>
+      </li>
+      <li *ngIf="page > 5">...</li>
+      <li *ngIf="page > 5" class="page-item">
+        <a class="page-link">{{ page }}</a>
+      </li>
+
+      <li class="page-item">
+        <a class="page-link" (click)="nextPage()"
+          ><img src="../../assets/MovieList/rightArrow.svg" alt=""
+        /></a>
+      </li>
+    </ul>
+  </nav>
 </div>

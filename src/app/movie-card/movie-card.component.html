@@ -2,7 +2,11 @@
   <div class="card border-0 mx-3 my-2">
     <div class="position-relative">
       <a (click)="navigateToMovieDetails(movie.id)">
-        <img [src]="movie.img" class="card-img-top mb-3 rounded" alt="..." />
+        <img
+          [src]="movie.img"
+          class="card-img card-img-top mb-3 rounded"
+          [alt]="movie.title"
+        />
       </a>
       <div
         class="row d-flex justify-content-center mt-100 position-absolute rating"
