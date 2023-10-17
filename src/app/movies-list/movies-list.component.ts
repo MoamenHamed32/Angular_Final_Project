@@ -33,11 +33,15 @@ export class MoviesListComponent {
     this.gettingMovies(this.page);
   }
   nextPage() {
-    this.page++;
-    this.gettingMovies(this.page);
+    if (this.page < this.pages.length) {
+      this.page++;
+      this.gettingMovies(this.page);
+    }
   }
   previousPage() {
-    this.page--;
-    this.gettingMovies(this.page);
+    if (this.page > 0) {
+      this.page--;
+      this.gettingMovies(this.page);
+    }
   }
 }

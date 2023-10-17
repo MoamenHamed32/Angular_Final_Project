@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MoviesRequestService } from '../services/movies-request.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-section',
@@ -7,12 +8,8 @@ import { MoviesRequestService } from '../services/movies-request.service';
   styleUrls: ['./search-section.component.css'],
 })
 export class SearchSectionComponent {
-  constructor(private gettingMovies: MoviesRequestService) {}
-
-  search() {}
-  handleSubmit(value: any) {
-    this.gettingMovies
-      .getSearchedForMovies(value.searchValue)
-      .subscribe((data) => console.log(data));
-  }
+  constructor(
+    private gettingMovies: MoviesRequestService,
+    private ActivatedRoute: ActivatedRoute
+  ) {}
 }

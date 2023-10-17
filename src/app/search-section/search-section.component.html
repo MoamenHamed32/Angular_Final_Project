@@ -2,11 +2,7 @@
   <div class="container p-4 bg-secondary-subtle rounded">
     <h3>Welcome to our movie app</h3>
     <p>Millions of movies, TV shows and people to discover. Explore now.</p>
-    <form
-      class="input-group mb-3"
-      #searchForm="ngForm"
-      (ngSubmit)="handleSubmit(searchForm.value)"
-    >
+    <form class="input-group mb-3" #searchForm="ngForm">
       <input
         ngModel
         name="searchValue"
@@ -18,7 +14,10 @@
         aria-describedby="button-addon2"
       />
       <button
-        (click)="search()"
+        [routerLink]="[
+          'movie-search',
+          searchForm.value.searchValue?.toLowerCase()
+        ]"
         class="button_Primary btn btn-outline-secondary rounded"
         type="submit"
         id="button-addon2"

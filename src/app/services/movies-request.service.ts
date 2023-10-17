@@ -30,11 +30,11 @@ export class MoviesRequestService {
       `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${this.APIKey}`
     );
   }
-  getSearchedForMovies(keyword: string): Observable<any> {
+  getSearchedMovies(keyword: string, page: number): Observable<any> {
     const encodedQuery = encodeURIComponent(keyword);
 
     return this.http.get(
-      `    https://api.themoviedb.org/3/search/keyword?query=${encodedQuery}&page=1&api_key=${this.APIKey}
+      `    https://api.themoviedb.org/3/search/movie?query=${encodedQuery}&page=${page}&api_key=${this.APIKey}
       `
     );
   }

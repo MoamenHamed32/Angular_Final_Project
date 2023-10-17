@@ -17,6 +17,8 @@ import {
   NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { MovieSearchPageComponent } from './movie-search-page/movie-search-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,8 @@ import { FormsModule } from '@angular/forms';
     RecommendationComponent,
     MovieDetialsComponent,
     SearchSectionComponent,
+    MovieSearchPageComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
