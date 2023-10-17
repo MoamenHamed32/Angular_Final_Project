@@ -20,7 +20,7 @@ export class MoviesListComponent {
     for (let i = 1; i < 6; i++) {
       this.pages.push(i);
     }
-    this.moviesRequestService.resetMovieCartO();
+    this.moviesRequestService.resetMovieCart();
     this.moviesRequestService.setCounter();
   }
   gettingMovies(page: number) {
