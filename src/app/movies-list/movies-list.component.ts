@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MoviesRequestService } from '../services/movies-request.service';
 import { AllMoviesApiObject } from '../interface/all-movies-api-object';
-import { take } from 'rxjs';
 
 @Component({
   selector: 'app-movies-list',
@@ -12,11 +11,31 @@ export class MoviesListComponent {
   movieList!: Array<AllMoviesApiObject>;
   movieToSetHisFavorite!: AllMoviesApiObject;
   currentMovie!: AllMoviesApiObject;
+  pages: Array<number> = [];
+  page: number = 1;
 
   constructor(private moviesRequestService: MoviesRequestService) {}
   ngOnInit() {
-    this.moviesRequestService.getMovieList().subscribe((movies) => {
+    this.gettingMovies(this.page);
+    for (let i = 1; i < 6; i++) {
+      this.pages.push(i);
+    }
+  }
+  gettingMovies(page: number) {
+    this.moviesRequestService.getMovieList(page).subscribe((movies) => {
       this.movieList = movies.results.slice(0, 12);
     });
+  }
+  pagination(e: any) {
+    this.page = e.target.innerHTML;
+    this.gettingMovies(this.page);
+  }
+  nextPage() {
+    this.page++;
+    this.gettingMovies(this.page);
+  }
+  previousPage() {
+    this.page--;
+    this.gettingMovies(this.page);
   }
 }

@@ -11,6 +11,11 @@ import { MovieCardDetailsComponent } from './movie-card-details/movie-card-detai
 import { RecommendationComponent } from './recommendation/recommendation.component';
 import { MovieDetialsComponent } from './movie-detials/movie-detials.component';
 import { SearchSectionComponent } from './search-section/search-section.component';
+import {
+  NgbModule,
+  NgbPaginationModule,
+  NgbAlertModule,
+} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,14 @@ import { SearchSectionComponent } from './search-section/search-section.componen
     MovieDetialsComponent,
     SearchSectionComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    NgbPaginationModule,
+    NgbAlertModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

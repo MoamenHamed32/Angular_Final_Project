@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesRequestService } from '../services/movies-request.service';
 import { SingleMovieObject } from '../interface/single-movie-object';
-import { AllMoviesApiObject } from '../interface/all-movies-api-object';
 import { AddToWatchListFromDetailsService } from '../services/add-to-watch-list-from-details.service';
 
 @Component({
@@ -26,9 +25,18 @@ export class MovieDetialsComponent {
 
   ngOnInit() {
     this.movieId = this.ActivatedRoute.snapshot.params['id'];
-    this.reqMovieDetails.getMovieDetails(this.movieId).subscribe((movie) => {
-      this.movie = movie;
+    this.getMovieData(this.movieId);
+  }
 
+  getMovieData(movieId: number) {
+    this.filledStars = [];
+    this.reqMovieDetails.getMovieDetails(movieId).subscribe((movie) => {
+      this.movie = movie;
+      if (this.movie.poster_path == null) {
+        this.movie.img = '../../assets/noImage.png';
+      } else {
+        this.movie.img = `https://image.tmdb.org/t/p/w200${this.movie.poster_path}`;
+      }
       this.movieRate = (Math.round(movie.vote_average) / 10) * 100;
 
       for (let i = 0; i <= this.movieRate; i += 25) {
@@ -56,6 +64,9 @@ export class MovieDetialsComponent {
     }
 
     this.reqMovieDetails.setCounter();
+  }
+  clickEmitterFromRecommendations(movieId: number) {
+    this.getMovieData(movieId);
   }
   removeMovie(movie: SingleMovieObject) {
     this.reqMovieDetails.removeFromWatchListById(movie);

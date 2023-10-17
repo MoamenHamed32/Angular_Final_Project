@@ -60,15 +60,10 @@ ul {
   line-height: 1.2rem;
 }
 .movie-desc {
-  /* display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden; */
   padding-left: 5px;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 2rem;
-  min-height: 180px;
   display: flex;
   align-items: center;
 }
