@@ -30,6 +30,14 @@ export class MoviesRequestService {
       `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${this.APIKey}`
     );
   }
+  getSearchedForMovies(keyword: string): Observable<any> {
+    const encodedQuery = encodeURIComponent(keyword);
+
+    return this.http.get(
+      `    https://api.themoviedb.org/3/search/keyword?query=${encodedQuery}&page=1&api_key=${this.APIKey}
+      `
+    );
+  }
 
   // WatchList Functions
   setMovieToCart(movie: AllMoviesApiObject): void {

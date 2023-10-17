@@ -16,7 +16,7 @@ import {
   NgbPaginationModule,
   NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +36,7 @@ import {
     NgbModule,
     NgbPaginationModule,
     NgbAlertModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
