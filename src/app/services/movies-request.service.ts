@@ -40,6 +40,9 @@ export class MoviesRequestService {
   getMovieToCart(): Array<AllMoviesApiObject> {
     return this.movieToCart;
   }
+  resetMovieCart() {
+    this.movieToCart = [];
+  }
 
   removeFromCart(movie: AllMoviesApiObject): void {
     this.movieToCart.splice(this.movieToCart.indexOf(movie), 1);
