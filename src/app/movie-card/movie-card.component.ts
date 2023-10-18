@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { MoviesRequestService } from '../services/movies-request.service';
 import { AllMoviesApiObject } from '../interface/all-movies-api-object';
 import { Router } from '@angular/router';
@@ -13,6 +13,8 @@ export class MovieCardComponent implements OnInit {
   movieRate!: number;
   isDuplicated: boolean = true;
   moviesOnCart!: Array<AllMoviesApiObject>;
+  noImageFound: boolean = false;
+  @Output() clickEmitter = new EventEmitter<any>();
 
   constructor(
     private sendToServices: MoviesRequestService,
@@ -20,7 +22,12 @@ export class MovieCardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.movie.img = `https://image.tmdb.org/t/p/w200${this.movie.poster_path}`;
+    if (this.movie.poster_path == null) {
+      this.movie.img = '../../assets/noImage.png';
+    } else {
+      this.movie.img = `https://image.tmdb.org/t/p/w200${this.movie.poster_path}`;
+    }
+
     this.movieRate = (Math.round(this.movie.vote_average) / 10) * 100;
     this.moviesOnCart = this.sendToServices.getMovieToCart();
   }
@@ -30,6 +37,7 @@ export class MovieCardComponent implements OnInit {
     } else {
       this.router.navigate(['/movie-details', movieId]);
     }
+    this.clickEmitter.emit(movieId);
   }
   addToCart(movie: AllMoviesApiObject) {
     if (this.moviesOnCart.indexOf(this.movie) != -1) {

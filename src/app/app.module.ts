@@ -11,7 +11,14 @@ import { MovieCardDetailsComponent } from './movie-card-details/movie-card-detai
 import { RecommendationComponent } from './recommendation/recommendation.component';
 import { MovieDetialsComponent } from './movie-detials/movie-detials.component';
 import { SearchSectionComponent } from './search-section/search-section.component';
-
+import {
+  NgbModule,
+  NgbPaginationModule,
+  NgbAlertModule,
+} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { MovieSearchPageComponent } from './movie-search-page/movie-search-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,8 +30,18 @@ import { SearchSectionComponent } from './search-section/search-section.componen
     RecommendationComponent,
     MovieDetialsComponent,
     SearchSectionComponent,
+    MovieSearchPageComponent,
+    PageNotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    NgbPaginationModule,
+    NgbAlertModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

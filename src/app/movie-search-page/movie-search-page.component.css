@@ -1,0 +1,39 @@
+.button_Primary {
+  background-color: #ffe353;
+  color: black;
+  border: none;
+  padding: 0px 48px;
+}
+.input-group {
+  height: 46px;
+}
+.anchor {
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.15rem;
+}
+
+.keyword {
+  font-weight: 400 !important;
+  margin-left: 10px;
+}
+.pagination {
+  --bs-pagination-border-color: transparent;
+  gap: 20px;
+}
+.pagination img {
+  width: 6.5px;
+  height: 15px;
+}
+.pagination .page-link {
+  color: #000;
+}
+.pagination .page-link:hover {
+  background-color: #ffe353 !important;
+  border: none !important;
+  border-radius: 5px !important;
+}

@@ -15,9 +15,9 @@ export class MoviesRequestService {
   constructor(private http: HttpClient) {}
 
   // API's Getters
-  getMovieList(): Observable<any> {
+  getMovieList(page: number): Observable<any> {
     return this.http.get(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${this.APIKey}`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${this.APIKey}&page=${page}`
     );
   }
   getMovieDetails(id: number): Observable<any> {
@@ -30,6 +30,14 @@ export class MoviesRequestService {
       `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${this.APIKey}`
     );
   }
+  getSearchedMovies(keyword: string, page: number): Observable<any> {
+    const encodedQuery = encodeURIComponent(keyword);
+
+    return this.http.get(
+      `    https://api.themoviedb.org/3/search/movie?query=${encodedQuery}&page=${page}&api_key=${this.APIKey}
+      `
+    );
+  }
 
   // WatchList Functions
   setMovieToCart(movie: AllMoviesApiObject): void {
@@ -39,6 +47,9 @@ export class MoviesRequestService {
   }
   getMovieToCart(): Array<AllMoviesApiObject> {
     return this.movieToCart;
+  }
+  resetMovieCart() {
+    this.movieToCart = [];
   }
 
   removeFromCart(movie: AllMoviesApiObject): void {

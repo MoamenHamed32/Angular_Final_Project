@@ -1,10 +1,7 @@
 <div class="card my-5 border-0" *ngIf="movie">
   <div class="container d-flex flex-row align-items-start gap-4">
     <figure class="card-img">
-      <img
-        [src]="['https://image.tmdb.org/t/p/w400' + movie.poster_path]"
-        alt=""
-      />
+      <img [src]="movie.img" alt="" />
     </figure>
     <div class="card-info d-flex flex-column justify-content-between">
       <div class="top-section d-flex flex-column">
@@ -87,5 +84,7 @@
 </div>
 <hr />
 <div class="conteiner">
-  <app-recommendation></app-recommendation>
+  <app-recommendation
+    (clickEmitterToDetails)="clickEmitterFromRecommendations($event)"
+  ></app-recommendation>
 </div>
